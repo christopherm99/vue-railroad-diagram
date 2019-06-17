@@ -1,24 +1,24 @@
 // Import vue component
-import component from './vue-railroad-diagram.vue';
+import component from "./vue-railroad-diagram";
 
 // install function executed by Vue.use()
 function install(Vue) {
   if (install.installed) return;
   install.installed = true;
-  Vue.component('VueRailroadDiagram', component);
+  Vue.component("VueRailroadDiagram", component);
 }
 
 // Create module definition for Vue.use()
 const plugin = {
-  install,
+  install
 };
 
 // To auto-install when vue is found
 /* global window global */
 let GlobalVue = null;
-if (typeof window !== 'undefined') {
+if (typeof window !== "undefined") {
   GlobalVue = window.Vue;
-} else if (typeof global !== 'undefined') {
+} else if (typeof global !== "undefined") {
   GlobalVue = global.Vue;
 }
 if (GlobalVue) {
