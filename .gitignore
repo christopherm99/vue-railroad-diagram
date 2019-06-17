@@ -35,8 +35,7 @@ bower_components
 .lock-wscript
 
 # Build files made by travis
-build/*
-!build/rollup.config.js
+dist/
 
 # Dependency directories
 node_modules/

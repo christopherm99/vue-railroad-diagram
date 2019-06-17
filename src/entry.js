@@ -1,5 +1,5 @@
 // Import vue component
-import component from "./vue-railroad-diagram";
+import component from "./railroad-diagram.vue";
 
 // install function executed by Vue.use()
 function install(Vue) {

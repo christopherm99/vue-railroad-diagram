@@ -3,9 +3,14 @@ node_js:
 - stable
 - '6'
 - '4'
+after_success:
+  - npm run build
+before_deploy:
+  - cd dist
 deploy:
   provider: npm
   email: chris.m.milan@gmail.com
+  skip_cleanup: true
   api_key:
     secure: Q/CKSCDWgSsdKFbJy3gjGBPnbKZm6bpNTVPxrhpL3lqTqOZMyn7bmSqA2Ie/PVyWeeYoJCpadNdr5+Z8KZTSKbYTk89FHkNLM6MEuuugAyyQIQWlvpL6fFouk4CGAEmu8BkrycO4DFcsl3VljfF/G6hmQjuJ+yX4yR93NzWn2e33Gem4Y0vmvTkIz6x3rXigJLA7FqGI/LiERuCLSj5NV1haLT8cREKwdxRI/05rRHOh0VWcD3/ifrbs1yU/umg4znN+51i6rm53r8VbNqHCb9MIQ0ptyrExox9IQWeeDPPGfRsR+MS7whDLAb3Y+t66hqLqdsCRQKJ3ksUqE8hXJYkINhMBMDAegwltKqL1mhDkQNocVnE/KjRu/HFyl864zzu7lTmFPCuTPYdesypPbP9APhcOn+ZOadQFzXoqDAUkUSEforf9rZdi2422+QPxzqZO2WrzH74UUSGg2OZ7x96jwjZUrD0q7Edv6dhUzJepDS5OdFggU5k9bB+6QPkdrtdTbITq7nchlaiIv5M4qW6ERQW6enQz23hImOGE5sqmQvFp734mu+xgzMewHIGraVvWe6wGr7TKZF/V+okB1WqhlfeMfRH13KhxgL8bri7q6KOq3eiEnvUh3ZJkBuV4lS3knh8ansWyDVUTtEh2pRCvpGHev0I4hpL+V1ptOGk=
   on:
