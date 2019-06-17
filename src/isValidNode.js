@@ -12,18 +12,17 @@ function isBranch(node) {
         (node.children
           ? Array.isArray(node.children) &&
             node.children.every(child => isNode(child))
-          : node.child && isNode(node.child)) &&
-        typeof node.normal === "boolean"
+          : node.child && isNode(node.child)) && typeof node.skip === "boolean"
       );
     case "multiple":
       return (node.children
         ? Array.isArray(node.children) &&
           node.children.every(child => isNode(child))
         : node.child && isNode(node.child)) &&
-        (node.repeat !== undefined ? typeof node.normal === "boolean" : true) &&
+        (node.repeat !== undefined ? typeof node.skip === "boolean" : true) &&
         typeof node.optional === "boolean" &&
         node.optional
-        ? typeof node.normal === "boolean"
+        ? typeof node.skip === "boolean"
         : true;
     default:
       return false;

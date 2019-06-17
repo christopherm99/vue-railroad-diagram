@@ -1,7 +1,7 @@
 {
   "name": "vue-railroad-diagram",
   "version": "1.0.0",
-  "description": "",
+  "description": "Vue.js implementation of tabatkins' railroad-diagrams library",
   "main": "dist/vue-railroad-diagram.ssr.js",
   "module": "dist/vue-railroad-diagram.esm.js",
   "unpkg": "dist/vue-railroad-diagram.min.js",
@@ -16,7 +16,7 @@
     "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife"
   },
   "dependencies": {
-    "railroad-diagrams": "^1.0.0"
+    "railroad-diagrams": "git+https://github.com/tabatkins/railroad-diagrams.git"
   },
   "devDependencies": {
     "cross-env": "^5.2.0",

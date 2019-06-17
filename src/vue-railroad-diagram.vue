@@ -1,57 +1,49 @@
 <template>
-  <div class="vue-railroad-diagram">
-    <p>
-      The counter is set to <b>{{ counter }}</b
-      >.
-    </p>
-    <button @click="counter += 1">Click +1</button>
-    <button @click="counter -= 1">Click -1</button>
-    <button @click="counter = initCounter">Reset</button>
-  </div>
+  <div class="vue-railroad-diagram" v-html="svg" />
 </template>
 
 <script>
-import {
-  Diagram,
-  ComplexDiagram,
-  Sequence,
-  Choice,
-  Optional,
-  OneOrMore,
-  ZeroOrMore,
-  Terminal,
-  NonTerminal,
-  Comment,
-  Skip
-} from "railroad-diagrams";
 import isValidNode from "./isValidNode";
+import convert from "./convertGrammar";
+import "railroad-diagrams/railroad-diagrams.css";
 
 export default {
   name: "VueRailroadDiagram", // vue component name
   data() {
     return {
-      counter: 5,
-      initCounter: 5
+      svg: convert(this.grammar, this.options).toString()
     };
-  },
-  created() {
-    console.log(Diagram(Terminal("+"), NonTerminal("Number")).toString());
   },
   props: {
     grammar: {
       type: Array,
+      default() {
+        return [
+          { type: "terminal", text: "{" },
+          {
+            type: "multiple",
+            optional: true,
+            repeat: ",",
+            skip: false,
+            children: [
+              { type: "nonTerminal", text: "string" },
+              { type: "terminal", text: ":" },
+              { type: "nonTerminal", text: "value" }
+            ]
+          },
+          { type: "terminal", text: "}" }
+        ];
+      },
       validator(value) {
-        return value.every(step => {
-          isValidNode(step);
-        });
+        return value.every(step => isValidNode(step));
       }
     },
     options: {
       type: Object,
-      default: function() {
+      default() {
         return {
-          isStack: false,
-          isComplex: false
+          isStack: true,
+          isComplex: true
         };
       },
       validator(value) {
@@ -68,6 +60,7 @@ export default {
 </script>
 
 <style scoped>
+/* @import "node_modules/railroad-diagrams/railroad-diagrams.css";
 .vue-railroad-diagram {
   display: block;
   width: 400px;
@@ -79,5 +72,5 @@ export default {
 }
 .vue-railroad-diagram p {
   margin: 0 0 1em;
-}
+} */
 </style>
