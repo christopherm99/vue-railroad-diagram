@@ -24,7 +24,9 @@ function parseNode(node) {
     case "skip":
       return Skip();
     case "choice":
-      return Choice(...node.children.map(child => parseNode(child)));
+      return node.default
+        ? Choice(...node.children.map(child => parseNode(child)), node.default)
+        : Choice(...node.children.map(child => parseNode(child)));
     case "optional":
       return node.children
         ? Optional(Sequence(...node.children.map(child => parseNode(child))))
