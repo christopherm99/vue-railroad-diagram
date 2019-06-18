@@ -1,0 +1,12 @@
+export let Diagram = jest.fn(),
+  ComplexDiagram = jest.fn(() => "ComplexDiagram"),
+  Sequence = jest.fn(() => "Sequence"),
+  Stack = jest.fn(() => "Stack"),
+  Choice = jest.fn(() => "Choice"),
+  Optional = jest.fn(() => "Optional"),
+  OneOrMore = jest.fn(() => "OnOrMore"),
+  ZeroOrMore = jest.fn(() => "ZeroOrMore"),
+  Terminal = jest.fn(() => "Terminal"),
+  NonTerminal = jest.fn(() => "NonTerminal"),
+  Comment = jest.fn(() => "Comment"),
+  Skip = jest.fn(() => "Skip");

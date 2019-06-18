@@ -34,19 +34,35 @@ function parseNode(node) {
     case "multiple":
       return node.optional
         ? node.skip
-          ? ZeroOrMore(
-              Sequence(...node.children.map(child => parseNode(child))),
-              node.repeat,
-              "skip"
-            )
-          : ZeroOrMore(
+          ? node.children
+            ? ZeroOrMore(
+                Sequence(...node.children.map(child => parseNode(child))),
+                node.repeat,
+                "skip"
+              )
+            : ZeroOrMore(parseNode(node.child), node.repeat, "skip")
+          : node.children
+          ? node.repeat !== undefined
+            ? ZeroOrMore(
+                Sequence(...node.children.map(child => parseNode(child))),
+                node.repeat
+              )
+            : ZeroOrMore(
+                Sequence(...node.children.map(child => parseNode(child)))
+              )
+          : node.repeat !== undefined
+          ? ZeroOrMore(parseNode(node.child), node.repeat)
+          : ZeroOrMore(parseNode(node.child))
+        : node.children
+        ? node.repeat !== undefined
+          ? OneOrMore(
               Sequence(...node.children.map(child => parseNode(child))),
               node.repeat
             )
-        : OneOrMore(
-            Sequence(...node.children.map(child => parseNode(child))),
-            node.repeat
-          );
+          : OneOrMore(Sequence(...node.children.map(child => parseNode(child))))
+        : node.repeat !== undefined
+        ? OneOrMore(parseNode(node.child), node.repeat)
+        : OneOrMore(parseNode(node.child));
     default:
       return "Uh oh";
   }
