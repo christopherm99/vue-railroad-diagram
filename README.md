@@ -10,6 +10,8 @@
 ![Dependency status](https://img.shields.io/david/christopherm99/vue-railroad-diagram.svg?style=for-the-badge)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=for-the-badge)](http://commitizen.github.io/cz-cli/)
 
+[![NPM](https://nodei.co/npm/vue-railroad-diagram.png?compact=true)](https://www.npmjs.com/package/vue-railroad-diagram)
+
 VueRailroadDiagram is a Vue.js component, powered by [tabatkins' railroad diagrams js library](https://github.com/tabatkins/railroad-diagrams.git), creating SVG syntax diagrams from JSON grammars.
 
 ## Installation
