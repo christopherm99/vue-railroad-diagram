@@ -1,6 +1,6 @@
 {
   "name": "vue-railroad-diagram",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Vue.js implementation of tabatkins' railroad-diagrams library",
   "repository": {
     "type": "git",
