@@ -1,12 +1,14 @@
 function isBranch(node) {
   switch (node.type) {
     case "choice":
-      return Array.isArray(node.children) &&
+      return (
+        Array.isArray(node.children) &&
         node.children.every(child => isNode(child)) &&
-        node.default
-        ? typeof node.default === "number" &&
+        (node.default
+          ? typeof node.default === "number" &&
             node.default < node.children.length - 1
-        : true;
+          : true)
+      );
     case "optional":
       return (
         (node.children
@@ -15,15 +17,15 @@ function isBranch(node) {
           : node.child && isNode(node.child)) && typeof node.skip === "boolean"
       );
     case "multiple":
-      return (node.children
-        ? Array.isArray(node.children) &&
-          node.children.every(child => isNode(child))
-        : node.child && isNode(node.child)) &&
+      return (
+        (node.children
+          ? Array.isArray(node.children) &&
+            node.children.every(child => isNode(child))
+          : node.child && isNode(node.child)) &&
         (node.repeat !== undefined ? typeof node.skip === "boolean" : true) &&
         typeof node.optional === "boolean" &&
-        node.optional
-        ? typeof node.skip === "boolean"
-        : true;
+        (node.optional ? typeof node.skip === "boolean" : true)
+      );
     default:
       return false;
   }
