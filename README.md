@@ -1,4 +1,14 @@
 # Vue Railroad Diagram
+
+[![CC BY 4.0](https://forthebadge.com/images/badges/cc-by.svg)](https://creativecommons.org/licenses/by/4.0/legalcode)
+[![Made With JavaScript](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/powered-by-electricity.svg)](https://forthebadge.com)
+
+[![Build status](https://img.shields.io/travis/christopherm99/vue-railroad-diagram.svg?style=for-the-badge)](https://travis-ci.org/christopherm99/vue-railroad-diagram)
+[![Coverage status](https://img.shields.io/coveralls/github/christopherm99/vue-railroad-diagram.svg?style=for-the-badge)](https://coveralls.io/github/christopherm99/vue-railroad-diagram)
+[![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/christopherm99/vue-railroad-diagram.svg?style=for-the-badge)](https://github.com/christopherm99/vue-railroad-diagram/network/alerts)
+![Dependency status](https://img.shields.io/david/christopherm99/vue-railroad-diagram.svg?style=for-the-badge)
+
 VueRailroadDiagram is a Vue.js component, powered by [tabatkins' railroad diagrams js library](https://github.com/tabatkins/railroad-diagrams.git), creating SVG syntax diagrams from JSON grammars.
 
 ## Installation
