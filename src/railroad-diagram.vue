@@ -17,23 +17,7 @@ export default {
   props: {
     grammar: {
       type: Array,
-      default() {
-        return [
-          { type: "terminal", text: "{" },
-          {
-            type: "multiple",
-            optional: true,
-            repeat: ",",
-            skip: false,
-            children: [
-              { type: "nonTerminal", text: "string" },
-              { type: "terminal", text: ":" },
-              { type: "nonTerminal", text: "value" }
-            ]
-          },
-          { type: "terminal", text: "}" }
-        ];
-      },
+      required: true,
       validator(value) {
         return value.every(step => isValidNode(step));
       }

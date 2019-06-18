@@ -108,10 +108,14 @@ The grammar is a non-optional slot. This is a sample, describing a JSON object:
 ```
 `grammar` is an array which describes each step of the railroad diagram. Steps consist of a type portion (`type`), data portion (eg. `text`, `skip`, etc.), and a a child/children portion (either `child` or `children` - N/A if step is a leaf). 
 
-## Todo
+## Development
+
+This component still has missing features. Below is todo list for what needs to be added. However, to preview you changes locally, `@vue/cli-service-global` must be installed globally (`npm install -g @vue/cli-service-global` or `yarn global add @vue/cli-service-global`). After installing this, `vue serve ./dev/tester.vue` can be run. 
+
+### Todo
 - [ ] Fix hrefs on the text leaf elements (`terminal`, `nonTerminal`, & `comment`)
-- [ ] Add tests (and **proper** quick development system)
-- [ ] Make `grammar` a required prop
+- [X] Add tests (and **proper** quick development system)
+- [X] Make `grammar` a required prop
 - [ ] Add more rigorous documentation
 - [ ] Allow for stack to be used in any container
 - [ ] Add support for `MultipleChoice()` and `HorizontalChoice()` (as part of `choice`)
@@ -122,3 +126,22 @@ The grammar is a non-optional slot. This is a sample, describing a JSON object:
   - [ ] `STROKE_ODD_PIXEL_LENGTH`
   - [ ] `INTERNAL_ALIGNMENT`
 - [ ] Add custom CSS options (ie. completely customized or just selected options)
+
+### Testing and Coverage
+
+When contributing, please, at the very least, ensure that the preexisting tests still pass, using Jest, the test runner.
+
+Running the provided test script (do not run `npm test`, as it is designed to run on CI):
+```bash
+npm run test:watch # This both watches all files and generates test coverage
+
+# Optionally run this in a second terminal (for coverage preview) 
+cd coverage/lcov-report
+npx http-server # Or your favorite autorefreshing server
+```
+
+Running a global instance of Jest (discouraged):
+```bash
+npm i -g jest # Installs jest
+jest # Runs jest
+```
