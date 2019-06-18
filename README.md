@@ -97,3 +97,18 @@ The grammar is a non-optional slot. This is a sample, describing a JSON object:
 ]
 ```
 `grammar` is an array which describes each step of the railroad diagram. Steps consist of a type portion (`type`), data portion (eg. `text`, `skip`, etc.), and a a child/children portion (either `child` or `children` - N/A if step is a leaf). 
+
+## Todo
+- [ ] Fix hrefs on the text leaf elements (`terminal`, `nonTerminal`, & `comment`)
+- [ ] Add tests (and **proper** quick development system)
+- [ ] Make `grammar` a required prop
+- [ ] Add more rigorous documentation
+- [ ] Allow for stack to be used in any container
+- [ ] Add support for `MultipleChoice()` and `HorizontalChoice()` (as part of `choice`)
+- [ ] Add `Diagram()` options:
+  - [ ] `VERTICAL_SEPARATION`
+  - [ ] `ARC_RADIUS`
+  - [ ] `DIAGRAM_CLASS`
+  - [ ] `STROKE_ODD_PIXEL_LENGTH`
+  - [ ] `INTERNAL_ALIGNMENT`
+- [ ] Add custom CSS options (ie. completely customized or just selected options)
