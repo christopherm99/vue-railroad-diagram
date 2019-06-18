@@ -8,6 +8,7 @@
 [![Coverage status](https://img.shields.io/coveralls/github/christopherm99/vue-railroad-diagram.svg?style=for-the-badge)](https://coveralls.io/github/christopherm99/vue-railroad-diagram)
 [![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/christopherm99/vue-railroad-diagram.svg?style=for-the-badge)](https://github.com/christopherm99/vue-railroad-diagram/network/alerts)
 ![Dependency status](https://img.shields.io/david/christopherm99/vue-railroad-diagram.svg?style=for-the-badge)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=for-the-badge)](http://commitizen.github.io/cz-cli/)
 
 VueRailroadDiagram is a Vue.js component, powered by [tabatkins' railroad diagrams js library](https://github.com/tabatkins/railroad-diagrams.git), creating SVG syntax diagrams from JSON grammars.
 
@@ -85,7 +86,7 @@ The options slot is an optional slot, defaulting to the following:
   isComplex: true
 }
 ```
-`options` is an object which consists of two booleans, `isStack` and `isComplex`, `isStack` describing whether the diagram should be renedered as a vertical stack or horizontal sequency, and `isComplex` describing whether the diagram has "Complex" starts and ends or not.
+`options` is an object which consists of two booleans, `isStack` and `isComplex`, `isStack` describing whether the diagram should be rendered as a vertical stack or horizontal sequency, and `isComplex` describing whether the diagram has "Complex" starts and ends or not.
 
 #### grammar
 The grammar is a non-optional slot. This is a sample, describing a JSON object:
@@ -137,7 +138,7 @@ npm run test:watch # This both watches all files and generates test coverage
 
 # Optionally run this in a second terminal (for coverage preview) 
 cd coverage/lcov-report
-npx http-server # Or your favorite autorefreshing server
+npx http-server # Or your favorite auto-refreshing server
 ```
 
 Running a global instance of Jest (discouraged):
@@ -145,3 +146,6 @@ Running a global instance of Jest (discouraged):
 npm i -g jest # Installs jest
 jest # Runs jest
 ```
+### Committing
+
+VueRailroadDiagram is [commitizen friendly](http://commitizen.github.io/cz-cli/), making commits as simple as running `npm run commit` and following the prompts. However, `git commit -m "..."` is still acceptable.
