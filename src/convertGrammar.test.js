@@ -2,7 +2,6 @@ import convert from "./convertGrammar";
 import {
   Diagram,
   ComplexDiagram,
-  Sequence,
   Stack,
   Choice,
   Optional,
